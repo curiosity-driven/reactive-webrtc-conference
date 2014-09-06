@@ -1,0 +1,20 @@
+{
+  "name": "conference-server",
+  "version": "1.0.0",
+  "description": "Simple chat room web socket server",
+  "author": "Curiosity driven <open-source@curiosity-driven.org>",
+  "license": "APL",
+  "dependencies": {
+    "express": "^4.11.2",
+    "ws": "^0.7.1"
+  },
+  "engines": {
+    "node": ">=0.10.x"
+  },
+  "config": {
+    "port": 3000
+  },
+  "scripts": {
+    "docker-run": "docker build . | grep 'Successfully built' | cut -d' ' -f3 | xargs docker run -i --rm -p 3000:3000"
+  }
+}

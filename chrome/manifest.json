@@ -1,0 +1,26 @@
+{
+    "manifest_version" : 2,
+    "name" : "Screen capturing",
+    "author": "Curiosity driven <open-source@curiosity-driven.org>",
+    "version" : "42.4",
+    "description" : "Enable screen sharing in WebRTC conferences.",
+    "homepage_url": "https://curiosity-driven.org/reactive-webrtc-conference",
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "content_scripts": [ {
+       "js": [ "content.js" ],
+       "run_at": "document_start",
+       "matches": ["*://docker/*", "*://localhost/*", "https://curiosity-driven.org/*"]
+    }],
+    "icons" : {
+        "128" : "icon.png"
+    },
+    "permissions": [
+        "desktopCapture",
+        "*://docker/*",
+        "*://localhost/*",
+        "https://curiosity-driven.org/*"
+    ]
+}

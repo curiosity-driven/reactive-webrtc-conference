@@ -1,0 +1,23 @@
+body { background-color: #fff; font-family: Arial, sans-serif;}
+
+.remote { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain}
+.status { z-index:1; font-size: xx-large; text-align: center; color: #333; position: absolute; top: 40%; left: 0; width: 100%; object-fit: contain}
+.participants { position: absolute; bottom: 10px; right: 10px; left: 10px; height: 20%; text-align: center; }
+.participants video { max-width:100%; max-height:100%; box-shadow: 0 0 25px #444; margin-right: 10px; }
+
+.self { display: none; }
+.self[src] { display: inline; }
+
+.sources {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  background: white;
+}
+.sources label { display: block;}
+
+.manual { z-index: 1; position: relative; }
+.manual textarea { width: 400px; height: 100px;}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+Copyright 2015 Curiosity driven
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<html>
+<head>
+    <title>Conference</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+</head>
+<body>
+<div class="status center"></div>
+<div class="substatus">
+    <div class="center" hidden>
+        Send this link to peer:
+        <span class="link"></span>
+        or use this QR code:
+        <div class="qr-link"></div>
+    </div>
+</div>
+<form class="sources">
+<label><input type="radio" name="source" value="sourceAudio" data-source='{"audio":true,"video":false}'> Audio</label>
+<label><input type="radio" name="source" value="sourceVideo" checked data-source='{"audio":false,"video":true}'> Video</label>
+<label><input type="radio" name="source" value="sourceAudioVideo" data-source='{"audio":true,"video":true}'> Audio + Video</label>
+<label><input type="radio" name="source" value="sourceChromeScreen" class="sourceChromeScreen"> Screensharing Chrome</label>
+<label><input type="radio" name="source" value="sourceFirefoxScreen" data-source='{"audio":false,"video":{"mediaSource":"screen"}}'> Screensharing FF</label>
+<label><input type="radio" name="source" value="sourceFirefoxFake" data-source='{"audio":false,"video":true,"fake":true}'> Fake FF</label>
+<input type="submit" value="Connect">
+</form>
+<video class="remote" autoplay></video>
+<div class="participants">
+    <video class="self" autoplay muted="muted"></video>
+</div>
+<script src="polyfills.js"></script>
+<script src="rtcpolyfills.js"></script>
+<script src="qrcode.js"></script>
+<script src="observable.js"></script>
+<script src="scripts.js"></script>
+<div class="manual" hidden>
+<input type="button" value="Offer" id="offerBtn" disabled>
+<textarea id="send"></textarea>
+<textarea id="receive"></textarea>
+<input type="button" value="Receive" id="receiveBtn" disabled>
+</div>
+</body>
+</html>
